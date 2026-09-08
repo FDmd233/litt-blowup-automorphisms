@@ -1,0 +1,32 @@
+name: Reconstruct manuscript PDF
+
+on:
+  push:
+    paths:
+      - '.pdfparts/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct PDF and verify checksum
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p output/pdf
+          cat .pdfparts/part-* | base64 -d > output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf
+          echo 'd73c3795848787dfa2d55ede31b75cc4b93844fc660c20db12e4a5e27aa466dc  output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf' | sha256sum -c -
+      - name: Commit reconstructed PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .pdfparts
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add manuscript PDF'
+          git push
