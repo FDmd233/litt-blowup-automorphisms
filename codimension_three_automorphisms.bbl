@@ -1,0 +1,31 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\noopsort}[1]{}
+\providecommand{\mr}[1]{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR~#1}}
+\providecommand{\zbl}[1]{\href{http://www.zentralblatt-math.org/zmath/en/search/?q=an:#1}{Zbl~#1}}
+\providecommand{\jfm}[1]{\href{http://www.emis.de/cgi-bin/JFM-item?#1}{JFM~#1}}
+\providecommand{\arxiv}[1]{\href{http://www.arxiv.org/abs/#1}{arXiv~#1}}
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{deCataldo}
+\bgroup\scshape{}M.~A.~A. de~Cataldo\egroup{}, Lectures on the {Hodge} theory
+  of projective manifolds, 2005, arXiv:math/0504561v1, 27 April 2005.
+  \doi{10.48550/arXiv.math/0504561}.
+
+\bibitem{LL}
+\bgroup\scshape{}J.~Lesieutre\egroup{} and \bgroup\scshape{}D.~Litt\egroup{},
+  Dynamical {Mordell}--{Lang} and automorphisms of blow-ups,  \emph{Algebraic
+  Geometry} \textbf{6} no.~1 (2019), 1--25. \doi{10.14231/AG-2019-001}.
+
+\bibitem{Stacks}
+\bgroup\scshape{}{The Stacks Project Authors}\egroup{}, The {Stacks} project,
+  \url{https://stacks.math.columbia.edu}, 2026, Tags 02LS, 0AB1, 0D4I, and
+  0FUT.
+
+\end{thebibliography}
