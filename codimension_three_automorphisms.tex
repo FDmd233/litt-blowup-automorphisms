@@ -1,0 +1,291 @@
+\documentclass{aomart}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+
+\doinumber{}
+\copyrightnote{}
+\volumenumber{}
+\issuenumber{}
+\publicationyear{}
+\papernumber{}
+\date{}
+\hypersetup{hidelinks,pdftitle={Automorphisms of blow-ups in codimension at least three},pdfauthor={Open AI}}
+\fancypagestyle{firstpage}{\fancyhf{}\fancyfoot[C]{\footnotesize\thepage}}
+
+\newcommand{\R}{\mathbf R}
+\newcommand{\C}{\mathbf C}
+\newcommand{\PP}{\mathbf P}
+\newcommand{\NOne}[1]{N^1(#1)_{\R}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Bl}{Bl}
+\DeclareMathOperator{\Nef}{Nef}
+\DeclareMathOperator{\Hess}{Hess}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\title[Automorphisms of blow-ups]{Automorphisms of blow-ups in codimension at least three}
+\author{Open AI}
+\makeatletter
+\let\@setaddresses\relax
+\makeatother
+
+\begin{document}
+
+\begin{abstract}
+Let $\pi\colon Y\to X$ be a finite composition of blow-ups of smooth complex
+projective varieties along smooth centres of codimension at least three.
+We prove that a finite-index subgroup of $\Aut(Y)$ descends faithfully to
+$\Aut(X)$. In particular, such blow-ups cannot turn a finite automorphism
+group into an infinite one. For a blow-up with connected nonempty centre,
+the numerical pullback space is a hyperplane on which the Hessian
+determinant of the top intersection form vanishes.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+All varieties are integral and defined over $\C$, and $\Aut(X)$ denotes
+the group of biregular automorphisms of $X$. Lesieutre and Litt
+\cite[Theorem~1.6]{LL} prove a uniform descent theorem for certain sequences
+of smooth blow-ups. For a centre of dimension $r$ in an $n$-fold, their
+hypotheses are $2r+3\leq n$, or $r+3\leq n$ together with polyhedrality of
+the nef cone of the exceptional divisor. They ask whether blow-ups along
+smooth centres of codimension at least three can turn a finite automorphism
+group into an infinite one \cite[Question~1.8]{LL}. We give a negative
+answer in the smooth complex-projective case.
+
+\begin{theorem}\label{thm:main}
+Let
+\[
+Y=X_m\xrightarrow{\pi_m}X_{m-1}\longrightarrow\cdots
+\xrightarrow{\pi_1}X_0=X
+\]
+be a finite sequence of smooth projective varieties, where each $\pi_i$
+is the ordinary blow-up of $X_{i-1}$ along a smooth closed centre, every connected
+component of which has codimension at least three. Put
+$\pi=\pi_1\circ\cdots\circ\pi_m$.
+There is a finite-index subgroup $G\leq\Aut(Y)$ such that every $g\in G$
+admits a unique $\bar g\in\Aut(X)$ satisfying
+\begin{equation}\label{eq:descent}
+\pi\circ g=\bar g\circ\pi.
+\end{equation}
+The homomorphism $G\to\Aut(X)$, $g\mapsto\bar g$, is injective.
+Consequently, if $\Aut(X)$ is finite, then $\Aut(Y)$ is finite.
+\end{theorem}
+
+We use the top intersection form on numerical divisor classes. Its Hessian
+determinant is nonzero by the Hodge index theorem. A blow-up along a
+connected nonempty centre of codimension at least three determines a
+hyperplane on which this determinant vanishes.
+There are only finitely many such hyperplanes, so a finite-index subgroup
+preserves the numerical data of the blow-down. The remaining step is to
+recover the actual fibres from those data.
+
+\section{The intersection discriminant}
+
+Let $Z$ be a smooth projective $n$-fold, with $n\geq3$, and set
+$V=\NOne{Z}$ and $\rho=\rho(Z)=\dim_{\R}V$.
+Here $\NOne{Z}$ is the space of real Cartier divisors modulo numerical
+equivalence. Choose a basis $D_1,\ldots,D_\rho$ of $V$. For $h,u,v\in V$,
+define
+\begin{equation}\label{eq:discriminant}
+q_h(u,v)=\int_Zh^{n-2}uv,\qquad
+M_Z(h)=\bigl(q_h(D_i,D_j)\bigr)_{i,j},\qquad
+\Delta_Z(h)=\det M_Z(h).
+\end{equation}
+The integrals denote intersection numbers. If
+$h=\sum_i x_iD_i$ and $P_Z(x)=\int_Zh^n$, then
+\begin{equation}\label{eq:hessian}
+\frac{\partial^2P_Z}{\partial x_i\partial x_j}
+=n(n-1)q_h(D_i,D_j),\qquad
+\det\Hess P_Z=\bigl(n(n-1)\bigr)^\rho\Delta_Z.
+\end{equation}
+Changing the basis multiplies $\Delta_Z$ by a nonzero square, so its zero
+set is intrinsic.
+
+\begin{lemma}\label{lem:finite-hyperplanes}
+The polynomial $\Delta_Z$ is nonzero and homogeneous of degree
+$d_Z=(n-2)\rho$. Its zero set is preserved by pullback under automorphisms.
+It contains at most $d_Z$ distinct real linear hyperplanes. Each of these
+hyperplanes therefore has a stabilizer of index at most $d_Z$ in $\Aut(Z)$.
+\end{lemma}
+
+\begin{proof}
+Choose a very ample divisor class $a$.
+The degree-two Hodge--Riemann bilinear relations
+\cite[Theorem~7.3.4(b),(c)]{deCataldo} say that
+$\alpha\mapsto\int_Z\alpha^2a^{n-2}$ is negative definite on the real
+$(1,1)$-classes satisfying $\int_Z\alpha a^{n-1}=0$.
+Numerical and real cohomological equivalence agree for divisors: a
+numerically trivial real divisor has both of these intersection numbers
+zero, so its Chern class vanishes by this negative definiteness; the
+converse follows from the cohomological interpretation of intersection.
+We may thus regard $V$ as the subspace of real $(1,1)$-classes spanned by
+divisor classes. The orthogonal decomposition
+\[
+V=\R a\oplus\left\{u\in V:\int_Zu a^{n-1}=0\right\}
+\]
+has one positive direction, since $a^n>0$, and a negative definite
+complement. Hence $q_a$ has signature $(1,\rho-1)$ and
+$\Delta_Z(a)\ne0$.
+The entries in \eqref{eq:discriminant} are homogeneous of degree $n-2$, which gives
+the asserted degree.
+
+For $g\in\Aut(Z)$, let $T$ be the matrix of $g^*$ in the chosen basis.
+Invariance of intersection numbers gives
+\[
+q_{g^*h}(g^*u,g^*v)=q_h(u,v),\qquad
+T^{\mathsf t}M_Z(g^*h)T=M_Z(h).
+\]
+Taking determinants yields
+\begin{equation}\label{eq:covariance}
+\Delta_Z(g^*h)=(\det T)^{-2}\Delta_Z(h).
+\end{equation}
+Finally, a polynomial vanishing on a real hyperplane is divisible by its
+defining linear form: in coordinates where the hyperplane is $x_\rho=0$,
+the constant coefficient in $x_\rho$ vanishes identically.
+A nonzero polynomial of degree $d_Z$ has at most $d_Z$ linear factors
+up to nonzero scalars. Pullback permutes the corresponding hyperplanes, proving the
+index bound. We use the right action $W\cdot g=g^*W$ on hyperplanes.
+\end{proof}
+
+\section{Blow-ups and descent}
+
+\begin{proposition}\label{prop:single-step}
+Let $\pi\colon Y=\Bl_S X\to X$ be the blow-up of a smooth projective
+$n$-fold along a nonempty connected smooth centre of codimension $c\geq3$.
+The stabilizer of $\pi^*\NOne{X}$ in $\Aut(Y)$ has index at most
+$(n-2)\rho(Y)$ and descends faithfully to $\Aut(X)$.
+\end{proposition}
+
+\begin{proof}
+Let $E$ be the exceptional divisor, and write $p\colon E\to S$ and
+$i\colon E\hookrightarrow Y$ for the natural maps. The morphism $p$ is a
+$\PP^{c-1}$-bundle, and $\mathcal O_E(E)$ restricts to
+$\mathcal O_{\PP^{c-1}}(-1)$ on its fibres \cite[Tag~0FUT]{Stacks}.
+We have
+\begin{equation}\label{eq:decomposition}
+\NOne{Y}=\pi^*\NOne{X}\oplus\R[E].
+\end{equation}
+Indeed, $E$ is prime. Every other prime divisor $F$ on $Y$ is the strict
+transform of a Cartier divisor $D=\pi(F)$ on $X$, so
+$F=\pi^*D-a_FE$ for some integer $a_F$. Thus pullbacks and $E$ span
+$\NOne{Y}$.
+Pullback is numerically injective: for an integral curve $B\subset X$,
+take the reduced closure of a closed point of the generic fibre of
+$\pi^{-1}(B)\to B$. This is an integral curve $C$ dominating $B$ with
+some finite degree $e>0$, and
+$(\pi^*D)\cdot C=e(D\cdot B)$.
+For a line $\ell$ in a fibre of $p$, one has
+$(\pi^*D)\cdot\ell=0$ and $E\cdot\ell=-1$.
+This proves the direct sum in \eqref{eq:decomposition}.
+
+Put $W=\pi^*\NOne{X}$, a hyperplane in $\NOne{Y}$.
+For $h=\pi^*a\in W$ and $u\in\NOne{Y}$, restriction to $E$ gives
+\begin{equation}\label{eq:exceptional-kernel}
+q_h(E,u)=\int_Y(\pi^*a)^{n-2}Eu
+=\int_Ep^*(a|_S)^{n-2}i^*u=0.
+\end{equation}
+The last equality holds because
+$\dim S=n-c<n-2$. Since $[E]\ne0$, the form $q_h$ is degenerate for
+every $h\in W$. Thus $W\subset\{\Delta_Y=0\}$, and
+Lemma~\ref{lem:finite-hyperplanes} gives
+\begin{equation}\label{eq:single-index}
+G_\pi=\{g\in\Aut(Y):g^*W=W\},\qquad
+[\Aut(Y):G_\pi]\leq(n-2)\rho(Y).
+\end{equation}
+
+We next prove regular descent. Choose an ample divisor $A$ on $X$.
+If $g\in G_\pi$ and $C\subset Y$ is an integral curve contracted by
+$\pi$, then
+\begin{equation}\label{eq:contracted-curves}
+A\cdot\pi_*g_*[C]=(g^*\pi^*A)\cdot C=0,
+\end{equation}
+since $g^*\pi^*A\in W$.
+If $\pi(g(C))$ were a curve, the left side would be positive.
+Hence $\pi g$ contracts every such $C$.
+Each nontrivial closed fibre of $\pi$ is $\PP^{c-1}$, whose closed points are
+joined by lines. Therefore $\pi g$ is constant on every closed fibre.
+
+Let $\Gamma$ be the reduced closed image of
+$(\pi,\pi g)\colon Y\to X\times X$.
+It is integral, and its first projection $q\colon\Gamma\to X$ is proper.
+Every closed fibre of $q$ has just one closed point and is therefore
+zero-dimensional. Upper semicontinuity of fibre dimension for a proper
+morphism \cite[Tag~0D4I]{Stacks} implies that all its fibres are zero-dimensional: a nonempty
+closed locus of positive-dimensional fibres would contain a closed point.
+Thus $q$ is quasi-finite and hence finite \cite[Tag~02LS]{Stacks}.
+Over $X\setminus S$, the image is the graph of $\pi g\pi^{-1}$, so $q$
+is birational. Since $X$ is normal, $q$ is an isomorphism
+\cite[Tag~0AB1]{Stacks}. The second projection defines a morphism
+$\bar g\colon X\to X$ satisfying \eqref{eq:descent}.
+Applying the same argument to $g^{-1}$ supplies its inverse.
+Uniqueness and compatibility with composition follow from
+\eqref{eq:descent} and the surjectivity of $\pi$.
+An element descending to the identity fixes $\pi^{-1}(X\setminus S)$
+pointwise and hence is the identity on $Y$. This proves faithfulness.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+A smooth centre has finitely many disjoint connected components.
+Blowing up their union is the same as blowing them up successively:
+on the open set obtained by removing all but one component, only that
+component contributes, and these identifications agree on overlaps.
+The remaining components lie in the isomorphism locus of each preceding
+step, so their codimensions do not change. Refine the sequence in this
+way, omit empty centres, and relabel its terms $X_0,\ldots,X_m$.
+If no steps remain, $\pi$ is an isomorphism and the assertion follows.
+Otherwise $n=\dim X\geq3$.
+
+For each step, Proposition~\ref{prop:single-step} gives a finite-index
+subgroup $G_i\leq\Aut(X_i)$ and an injective descent homomorphism
+$\delta_i\colon G_i\to\Aut(X_{i-1})$.
+Set $H_0=\Aut(X_0)$ and $H_i=\delta_i^{-1}(H_{i-1})$.
+The elementary coset inequality gives
+\[
+[G_i:H_i]
+=[\delta_i(G_i):\delta_i(G_i)\cap H_{i-1}]
+\leq[\Aut(X_{i-1}):H_{i-1}].
+\]
+Induction shows that $H_i$ has finite index in $\Aut(X_i)$ and descends
+faithfully through the first $i$ steps. Take $G=H_m$.
+If $\Aut(X)$ is finite, then $G$ is finite, and its finite index makes
+$\Aut(Y)$ finite.
+\end{proof}
+
+\begin{remark}\label{rem:index}
+For the refined nonempty sequence, the proof gives the explicit bound
+\[
+[\Aut(Y):G]\leq\prod_{i=1}^m(n-2)\rho(X_i)
+=(n-2)^m\prod_{i=1}^m\bigl(\rho(X)+i\bigr),
+\]
+where $m$ now counts the connected nonempty centres. The last equality
+uses \eqref{eq:decomposition} at each step.
+\end{remark}
+
+\begin{remark}\label{rem:codimension-two}
+The codimension condition enters in \eqref{eq:exceptional-kernel}.
+If $c=2$ and $a$ is very ample on $X$, put
+$\xi=c_1(\mathcal O_E(-E))$. Since $p\colon E\to S$ has fibre $\PP^1$
+and $p_*\xi=1$, the same calculation instead gives
+\[
+q_{\pi^*a}(E,E)=-\int_Ep^*(a|_S)^{n-2}\xi
+=-\int_S(a|_S)^{n-2}<0.
+\]
+The mixed pairings vanish because they restrict to $n-1$ divisor factors
+on $S$. On the pullback space the form is the nondegenerate form $q_a$
+of $X$. Consequently
+$\Delta_Y(\pi^*a)\ne0$ in this case.
+Uniform descent can indeed fail in codimension two
+\cite[Example~2.5]{LL}.
+\end{remark}
+
+\bibliographystyle{aomplain}
+\bibliography{references}
+
+\end{document}
