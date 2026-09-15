@@ -18,7 +18,7 @@ The proof uses the Hessian determinant of the top intersection form on \(N^1(Y)_
 - [LaTeX source](codimension_three_automorphisms.tex)
 - [Bibliography](references.bib)
 
-AI-assisted tools were used during exploration, checking, and manuscript preparation.
+The proof was produced with Astra during an investigation of the Lesieutre-Litt question.
 
 ## Scope
 
