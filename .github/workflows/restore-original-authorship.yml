@@ -1,0 +1,57 @@
+name: Restore original blow-up authorship
+
+on:
+  push:
+    paths:
+      - '.github/workflows/restore-original-authorship.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore source authorship
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('codimension_three_automorphisms.tex')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('\\author{Zhijie He}', '\\author{Open AI}')
+          s=s.replace('pdfauthor={Zhijie He}', 'pdfauthor={Open AI}')
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Compile manuscript
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: codimension_three_automorphisms.tex
+          texlive_version: 2026
+      - name: Install, verify, and checksum
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          mkdir -p output/pdf /tmp/blowup-qa
+          cp codimension_three_automorphisms.pdf output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf
+          pdfinfo output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf | grep -F 'Author:          Open AI'
+          pdftoppm -f 1 -singlefile -png -r 160 output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf /tmp/blowup-qa/page >/dev/null 2>&1
+          sha256sum output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf > SHA256SUMS.txt
+      - name: Upload visual QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: blowup-authorship-qa
+          path: /tmp/blowup-qa/page.png
+      - name: Commit restoration
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/restore-original-authorship.yml
+          git rm -f codimension_three_automorphisms.pdf codimension_three_automorphisms.rpi || true
+          git add codimension_three_automorphisms.tex output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf SHA256SUMS.txt
+          git commit -m 'Restore original blow-up authorship'
+          git pull --rebase origin main
+          git push
