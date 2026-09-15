@@ -24,12 +24,6 @@ AI-assisted tools were used during exploration, checking, and manuscript prepara
 
 The current note concerns the smooth complex-projective case and ordinary blow-ups along smooth centers of codimension at least three. It does not claim results for singular starting varieties, weighted blow-ups, small contractions, or arbitrary birational modifications.
 
-## Research updates
-
-This repository is intended to retain later revisions and progress related directly to the Lesieutre-Litt blow-up question. Subsequent developments that move substantially beyond that question will be kept separate from the manuscript itself.
-
-See [`updates/`](updates/) for dated research notes when they are added.
-
 ## Build
 
 With a standard LaTeX installation containing `latexmk`, run
@@ -42,4 +36,4 @@ The PDF is written to `output/pdf/Automorphisms_of_blowups_codimension_at_least_
 
 ## Status
 
-Current manuscript: initial public preprint, September 2026.
+Current manuscript: initial preprint, September 2026.
