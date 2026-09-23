@@ -2,10 +2,10 @@ name: Build manuscript PDF
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'codimension_three_automorphisms.tex'
-      - 'codimension_three_automorphisms.bbl'
-      - 'references.bib'
       - 'Makefile'
       - '.github/workflows/reconstruct-pdf.yml'
   workflow_dispatch:
