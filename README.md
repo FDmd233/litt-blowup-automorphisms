@@ -32,4 +32,4 @@ The PDF is written to `output/pdf/Automorphisms_of_blowups_codimension_at_least_
 
 ## AI assistance
 
-Astra was used during parts of the investigation, drafting, and checking of this note. The Astra system used for this work was GPT-6 Astra.
+GPT-6 Astra and GPT-5.6 Sol were used during parts of the investigation, drafting, and checking of this note.
