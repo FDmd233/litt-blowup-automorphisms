@@ -22,13 +22,13 @@ The note concerns the smooth complex-projective case and ordinary blow-ups along
 
 ## Build
 
-With a standard LaTeX installation containing \`latexmk\`, run
+With a standard LaTeX installation containing `latexmk`, run
 
-\`\`\`bash
+```bash
 make
-\`\`\`
+```
 
-The PDF is written to \`output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf\`.
+The PDF is written to `output/pdf/Automorphisms_of_blowups_codimension_at_least_three.pdf`.
 
 ## AI assistance
 
