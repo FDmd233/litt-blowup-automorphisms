@@ -5,7 +5,7 @@ TEX=codimension_three_automorphisms.tex
 
 all: $(PDF)
 
-$(PDF): $(TEX) references.bib
+$(PDF): $(TEX)
 	mkdir -p output/pdf
 	latexmk -pdf -interaction=nonstopmode -halt-on-error -jobname=Automorphisms_of_blowups_codimension_at_least_three -outdir=output/pdf $(TEX)
 
